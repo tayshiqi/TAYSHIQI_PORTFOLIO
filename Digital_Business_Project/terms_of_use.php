@@ -1,0 +1,237 @@
+<?php
+include("config.php"); 
+
+if (!isset($_SESSION["sess_cid"])) 
+{
+	header("Location: login.php"); 
+}
+else
+{
+	$sess_cid = $_SESSION["sess_cid"];
+	
+	$get_customer = mysqli_query($conn, "select * from customertbl where cust_id=$sess_cid");
+	
+	$cust_rec = mysqli_fetch_assoc($get_customer );
+
+}
+
+?>
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Terms and Conditions </title>
+		<link rel="icon" href="images/logo.png" type="images/png">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.slidertron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<div id="logo"><img src="images/logo.png" title="Kanso Fruits" alt="Kanso Fruits Logo"/></div>
+				<h1><a href="index.html"> KANSO FRUIT</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="about_us.php">About Us</a></li>
+						<li>
+							<a href="" class="icon fa-angle-down">Products</a>
+							<ul>
+								<li><a href="premium_fruit.php">Premium Fruits</a></li>
+								<li><a href="seasonal_fruit.php">Seasonal Fruits</a></li>
+								<li><a href="citrus_fruit.php">Citrus Fruits</a></li>
+								<li><a href="stone_fruit.php">Stone Fruits</a></li>
+							</ul>
+						</li>
+						<li><a href="customer_view_cart.php" class="icon fa-shopping-cart"></a></li>
+						<li>
+							<a href="" class="icon fa-list"></a>
+							<ul>
+								<li><a href="customer_profile.php" class="icon fa-user">&nbsp;&nbsp;&nbsp;Account</a></li>
+								<li><a href="customer_view_product_list.php" class="icon fa-th">&nbsp;&nbsp;&nbsp;Product List</a></li>
+								<li><a href="customer_order_list.php" class="icon fa-history">&nbsp;&nbsp;&nbsp;Order List</a></li>
+								<li><a href="user_logout.php" class="icon fa-sign-out">&nbsp;&nbsp;&nbsp;Sign Out</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper style1">
+				<header class="major">
+					<h2>Terms and Conditions</h2>
+					<p style="font-size:1em;">Last Updated: 30th November 2024</p>
+				</header>
+				<div class="container">
+						
+					<!-- Content -->
+						<section id="content" style="text-align:justify;">
+							<p>Welcome to Kanso Fruits, your online store for premium Japanese fruits. By accessing or using 
+							our website at <a href="index.php">Kanso Fruits</a> (the "Site") and placing an order for products, you agree to 
+							the following terms and conditions (the "Terms"). Please read these Terms carefully before using 
+							our Site or making a purchase.</p>
+						
+						<ol>
+						
+						<b><li><h3>Acceptance of Terms</h3></li></b>
+								<p>By using this Site, registering an account, or purchasing products, you agree to be bound by 
+								these Terms and Conditions, which constitute a legally binding agreement between you 
+								("the Customer" or "you") and Kanso Fruits ("the Company," "we," or "us"). If you do not agree to 
+								these Terms, you should not use this Site.</p>
+								
+						<b><li><h3>Eligibility</h3></li></b>
+								<p>To make a purchase on the Site, you must:</p>
+								<ul>
+									<li>Be at least 18 years old and capable of entering legally binding contracts.</li>
+									<li>Have a valid shipping address.</li>
+									<li>Possess a valid payment method accepted by us (credit card, debit card, or 
+									other payment methods available at checkout).</li>
+								</ul>
+							
+						<b><li><h3>Product Information</h3></li></b>
+								<p>We offer a variety of premium Japanese fruits, including but not limited to:</p>
+								<ul>
+									<li>Yubari King Melons</li>
+									<li>Kyoho Grapes</li>
+									<li>Mikan Oranges</li>
+									<li>Japanese Mandarins</li>
+									<li>Sato Nishiki</li>
+								</ul>
+								<p>All product descriptions, prices, and images are provided in good faith and are as accurate 
+								as possible. However, due to seasonal variations, availability, and product sourcing, there may
+								be slight variations in the appearance, taste, and price of the fruits.</p>
+							
+						<b><li><h3>Orders and Payment</h3></li></b>
+								<ul>
+									<li><b>Order Acceptance: </b> When you place an order on our Site, you are making an offer 
+									to purchase the items in your cart. We reserve the right to accept or decline your order 
+									based on product availability, payment issues, or other factors at our discretion. You will
+									receive an order confirmation email once your order is successfully placed.</li>
+									<li><b>Pricing and Payment: </b> All prices are listed in Malaysian Ringgit (MYR) and are 
+									inclusive of applicable taxes unless stated otherwise. Shipping fees are calculated at 
+									checkout and will depend on your location. We accept payments via credit cards, debit cards, 
+									PayPal, online banking. By placing an order, you authorize us to charge your selected payment
+									method.</li>
+								</ul>
+							
+						<b><li><h3>Shipping and Delivery</h3></li></b>
+								<ul>
+									<li><b>Shipping Areas: </b> We currently deliver to all regions within Malaysia. Delivery 
+									to other countries is not available currently.</li>
+									<li><b>Shipping Costs: </b> Shipping fees are calculated during checkout based on your 
+									delivery address and the size of your order. You will be notified of the total shipping
+									cost before completing your purchase.</li>
+									<li><b>Delivery Time: </b> We aim to deliver orders within 5 business days, but actual 
+									delivery times may vary depending on your location, stock availability, and external 
+									factors such as public holidays or weather disruptions. Please note that we do not 
+									guarantee delivery times but will keep you updated on the status of your order.</li>
+									<li><b>Delivery Method: </b> We use trusted delivery partners DHL Temperature Controlled Logistics
+									for shipping. You will receive a tracking number to monitor the status of your shipment.</li>
+								</ul>
+							
+						<b><li><h3>Returns, Exchanges, and Refunds</h3></li></b>
+								<ul>
+									<li><b>Perishable Goods: </b> Due to the perishable nature of our products, we cannot 
+									accept returns or exchanges for fruits unless there is a defect or issue with the product 
+									upon delivery.</li>
+									<li><b>Damaged or Defective Products: </b> If you receive damaged or defective fruit, 
+									please notify us within 24 hours of delivery with a clear description and photographic 
+									evidence. We will either replace the item or issue a refund, depending on the situation.</li>
+									<li><b>Refund Process: </b> If a refund is applicable, it will be processed to your original payment 
+									method within 5 business days. Shipping costs are non-refundable, except in case of faulty products 
+									or delivery errors.</li>
+								</ul>
+								
+						<b><li><h3>Product Quality and Storage</h3></li></b>
+								<ul>
+									<li><b>Freshness Guarantee: </b> We ensure that all fruits are carefully selected and 
+									packed to maintain the highest quality and freshness. However, given the perishable nature 
+									of the products, we recommend consuming them as soon as possible for optimal taste and 
+									texture.</li>
+									<li><b>Storage Instructions: </b> You will receive storage instructions with each order. 
+									Follow these guidelines to prolong the freshness of your fruits and maintain their quality.</li>
+								</ul>
+							
+						<b><li><h3>Intellectual Property</h3></li></b>
+								<p>All content on this Site, including text, images, graphics, logos, videos, and other materials, 
+								are the intellectual property of Kanso Fruits or our licensors and are protected by copyright laws. 
+								You may not use, copy, reproduce, distribute, or display any content from the Site without prior 
+								written consent from us.</p>
+								
+						<b><li><h3>Privacy Policy</h3></li></b>
+								<p>We respect your privacy and are committed to protecting your personal information. 
+								Please refer to our <a href="privacy_policy.php">Privacy Policy </a> to learn how we collect, use, and safeguard your personal 
+								data.</p>
+							
+						<b><li><h3>Limitation of Liability</h3></li></b>
+								<p>To the fullest extent permitted by law, Kanso Fruits will not be liable for any indirect, 
+								incidental, special, or consequential damage arising out of the use or inability to use our 
+								products, services, or website. Our total liability, if any, is limited to the amount paid for 
+								the products that are the subject of the claim.</p>
+							
+						<b><li><h3>Force Majeure</h3></li></b>
+								<p>We are not liable for any failure or delay in performance of our obligations under these 
+								Terms due to causes beyond our reasonable control, including but not limited to natural 
+								disasters, pandemics, strikes, government restrictions, or supply chain disruptions.</p>
+							
+						<b><li><h3>Governing Law</h3></li></b>
+								<p>These Terms and Conditions are governed by and construed in accordance with the laws of 
+								Malaysia. Any disputes arising from these Terms shall be resolved under the exclusive 
+								jurisdiction of the courts of Malaysia.</p>
+							
+						<b><li><h3>Changes to Terms</h3></li></b>
+								<p>We reserve the right to modify, update, or change these Terms at any time. Changes will be 
+								posted on this page, and the updated Terms will take effect immediately upon posting. We 
+								encourage you to review this page periodically to stay informed about our Terms and Conditions.</p>
+							
+						<b><li><h3>Contact Information</h3></li></b>
+								<p>For any questions, concerns, or feedback regarding these Terms, or if you need customer 
+								support, please <a href="contactus.php">contact us </a> through the form.</p>
+						
+						</ol>
+						
+						</section>
+								
+				</div>
+			</section>
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://x.com/KansoFruit123" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://www.instagram.com/kansofruit/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="mailto:kansofruit@gmail.com" class="icon fa-envelope"><span class="label">Envelope</span></a></li>
+				</ul>
+				<ul class="menu">
+					<li><a href="faqs.php">FAQs</a></li>
+					<li><a href="terms_of_use.php">Terms of Use</a></li>
+					<li><a href="privacy_policy.php">Privacy</a></li>
+					<li><a href="contactus.php">Contact</a></li>
+				</ul>
+				<span class="copyright">
+					&copy; Copyright Kanso Fruits 2024. All rights reserved. 
+				</span>
+			</footer>
+
+	</body>
+</html>

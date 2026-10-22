@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Brewtopia Café</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <link href="design.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="script.js"></script>
+</head>
+<body>
+<!-- Header -->
+<div class="header">
+	<div class="logo">
+		<a href="index.html"><img src="image/logo.png" title="Brewtopia " alt="Brewtopia Logo"/>&nbsp;Brewtopia Café<small class="slogan"> &nbsp;&nbsp; - "Sip Bold, Live Bright"</small></a>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about_us.html">About Us</a></li>
+			<li>
+				<a href="#"><i class="fa fa-caret-down"></i>Menu</a>
+				<ul>
+					<li><a href="product1.html">Coffee Creations</a></li>
+					<li><a href="product2.html">Tea & Wellness</a></li>
+					<li><a href="product3.html">Pastries & Desserts</a></li>
+					<li><a href="product4.html">Light Bites & Snacks</a></li>
+				</ul>
+			</li>
+			<li><a href="contact_us.html">Contact Us</a></li>
+			<li><a href="login.html"><i class="fas fa-user"></i></a></li>
+			<li>
+				<a href="#" id="cart-icon">
+					<i class="fa fa-shopping-cart"></i>
+					<span id="cart-count" class="cart-count">0</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="overlay" id="overlay"></div>
+<div id="cart-section" class="cart-section" style="display:none;">
+    <button class="cart-close" id="cart-close"><i class="fa fa-times"></i></button>
+    <h2 class="cart-title">Your Cart</h2>
+    
+    <div id="cart-sidebar-items" class="cart-items"></div>
+    
+    <div class="cart-summary">
+        <div class="summary-row"><span>Subtotal:</span><span id="sidebar-subtotal">RM 0.00</span></div>
+        <div class="summary-row"><span>Delivery Fee:</span><span id="sidebar-delivery">RM 5.00</span></div>
+        <div class="summary-row"><span>Tax (6%):</span><span id="sidebar-tax">RM 0.00</span></div>
+        <div class="summary-row"><span>Package Fee:</span><span id="sidebar-package">RM 1.00</span></div>
+        <div class="summary-row summary-total"><span>Total:</span><span id="sidebar-total">RM 0.00</span></div>
+        <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+    </div>
+</div>    
+
+<!-- Checkout Order Summary -->
+<div class="checkout-summary">
+    <h2>Order Summary</h2>
+    <div id="checkout-items">
+		<table>
+			<tr>
+				<td>Order Menu</td>
+				<td>Quantity</td>
+				<td>Price</td>
+			</tr>
+		</table>
+	</div>
+
+    <div class="summary-row">
+        <span>Service Type:</span>
+        <span id="checkout-service-type"></span>
+    </div>
+    <div class="summary-row">
+        <span>Subtotal:</span>
+        <span id="checkout-subtotal"></span>
+    </div>
+    <div class="summary-row">
+        <span>Delivery Fee:</span>
+        <span id="checkout-delivery"></span>
+    </div>
+    <div class="summary-row">
+        <span>Package Fee:</span>
+        <span id="checkout-package"></span>
+    </div>
+    <div class="summary-row">
+        <span>Tax:</span>
+        <span id="checkout-tax"></span>
+    </div>
+    <div class="summary-row summary-total">
+        <span>Total:</span>
+        <span id="checkout-total"></span>
+    </div>
+    <div id="dinein-buttons"></div>
+</div>
+
+<!-- Checkout Form -->
+<div class="container-form">
+	<section class="checkout-form">
+	<div class="heading"><h2>Complete Your Information</h2></div>
+		<form name="checkoutfrm" action="" method="post" onsubmit="return check_form();">
+			<div class="flex">
+			<!-- Input fields -->
+				<div class="inputBox"><p>Your name</p><input type="text" id="cust_name"><br><span id="err_name"></span></div>
+				<div class="inputBox"><p>Your phone number</p><input type="text" id="phone_number"><br><span id="err_phone"></span></div>
+				<div class="inputBox"><p>Your email</p><input type="email" id="email"><br><span id="err_email"></span></div>
+				<div class="inputBox">
+					<p>Payment method</p>
+					<select id="method">
+						<option value="p0" selected disabled>---Select---</option>
+						<option value="Cash On Delivery">Cash On Delivery</option>
+						<option value="Credit / Debit card">Credit / Debit card</option>
+						<option value="Paypal">Paypal</option>
+						<option value="Touch'n Go eWallet">Touch'n Go eWallet</option>
+						<option value="Online Banking">Online Banking</option>
+						<option value="Boots Wallet">Boots Wallet</option>
+					</select>
+					<br><span id="err_method"></span>
+				</div>
+				<div class="inputBox"><p>Address line 1</p><input type="text" id="flat"><br><span id="err_flat"></span></div>
+				<div class="inputBox"><p>Address line 2</p><input type="text" id="street"><br><span id="err_street"></span></div>
+				<div class="inputBox"><p>City</p><input type="text" id="city"><br><span id="err_city"></span></div>
+				<div class="inputBox"><p>State</p><input type="text" id="state"><br><span id="err_state"></span></div>
+				<div class="inputBox"><p>Country</p><input type="text" id="country"><br><span id="err_country"></span></div>
+				<div class="inputBox"><p>Pos code</p><input type="text" id="poscode"><br><span id="err_poscode"></span></div>
+			</div>
+			<button type="submit">Order Now</button>
+		</form>
+	</section>
+</div>
+
+<!--footer-->
+<div class="footer">
+	<div class="footbig">
+		<div class="footbox">
+			<img src="image/logo.png" title="Brewtopia " alt="Brewtopia Logo"/>
+			<h2>Brewtopia Café</h2>
+			<p>Sip Bold, Live Bright</p>
+			<ul class="icon">
+				<li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="https://x.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Quick Links</h3>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about_us.html">About</a></li>
+				<li><a href="product1.html">Product</a></li>
+                <li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Help & Support</h3>
+			<ul>
+				<li><a href="faqs.html">FAQs</a></li>
+				<li><a href="privacy_policy.html">Privacy Policy</a></li>
+				<li><a href="terms_condition.html">Terms & Conditions</a></li>
+				<li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="checkout.html">Check Out</a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Contact Us</h3>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1805585650786!2d101.76820647718331!3d3.046250289012621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35620cf0db79%3A0x845cf290cc322790!2sBatu%2011%20cheras!5e0!3m2!1sen!2smy!4v1755910421715!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<div class="footbox">
+			<p><i class="fa fa-map-marker"></i>130, Jalan 15, Batu 11 Cheras, 43200 Cheras, Selangor</p>
+			<p><i class="fa fa-envelope"></i><a href="mailto:hello@brewtopia.com">hello@brewtopia.com</a></p>
+			<p><i class="fa fa-phone"></i>+60 19-750 4913</p>
+		</div>
+		
+		<div class="footbox">
+			<h3>Newsletter</h3>
+			<p>Subscribe to get special offers and updates</p>
+			<form>
+				<input type="email" placeholder="Your email address">
+				<button type="submit">Subscribe</button>
+			</form>
+		</div>
+	</div>
+	
+	<p><small>&copy; 2025 Brewtopia Café. All rights reserved. </small></p>
+</div>
+</body>
+</html>

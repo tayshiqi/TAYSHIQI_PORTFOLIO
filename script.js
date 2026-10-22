@@ -1,0 +1,1 @@
+console.log("Welcome to Tay Shi Qi's Portfolio!");

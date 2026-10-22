@@ -1,0 +1,320 @@
+/* ==========================================================
+   Tay Shi Qi | Digital Business Portfolio
+   Palette: petrol #0f3d4c, mist #eef3f4, amber #f2a33a,
+            ink #12222a, slate #4a5d66
+   Type: Bricolage Grotesque (headings), Public Sans (body)
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap");
+
+:root {
+    --petrol: #0f3d4c;
+    --petrol-deep: #0a2c37;
+    --mist: #eef3f4;
+    --paper: #ffffff;
+    --amber: #f2a33a;
+    --amber-dark: #d98a1f;
+    --ink: #12222a;
+    --slate: #4a5d66;
+    --line: #cfdadd;
+
+    --font-head: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+
+    /* Keeps content in a centred column while backgrounds run full width */
+    --gutter: max(1.25rem, calc((100vw - 1080px) / 2));
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--mist);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-head);
+    line-height: 1.15;
+    margin: 0 0 0.75rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a {
+    color: var(--petrol);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--amber-dark);
+}
+
+:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ---------- Header / Navigation ---------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--petrol-deep);
+    padding-inline: var(--gutter);
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    padding-block: 0.9rem;
+}
+
+header nav h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    color: #fff;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav a {
+    display: inline-block;
+    padding: 0.25rem 0;
+    color: #d6e4e8;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+header nav a:hover {
+    color: #fff;
+    border-bottom-color: var(--amber);
+}
+
+/* ---------- Sections ---------- */
+section {
+    padding: 4.5rem var(--gutter);
+}
+
+section > h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--petrol);
+    padding-left: 1rem;
+    border-left: 6px solid var(--amber);
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    background: var(--petrol);
+    color: #fff;
+    padding-block: clamp(4rem, 12vw, 8rem);
+}
+
+.hero p:first-child {
+    margin-bottom: 0.25rem;
+    color: #a9c7cf;
+    font-size: 1.125rem;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 500;
+    color: var(--amber);
+    margin-bottom: 1.25rem;
+}
+
+.hero p:not(:first-child) {
+    color: #d6e4e8;
+    max-width: 52ch;
+    margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    background: var(--amber);
+    color: var(--petrol-deep);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.button:hover {
+    background: #fff;
+    color: var(--petrol-deep);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+/* ---------- About ---------- */
+#about {
+    background: var(--paper);
+}
+
+#about p {
+    font-size: 1.1875rem;
+}
+
+/* ---------- Skills ---------- */
+#skills h3 {
+    font-size: 1.125rem;
+    color: var(--slate);
+    margin: 2rem 0 0.75rem;
+}
+
+#skills h3:first-of-type {
+    margin-top: 0;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.card {
+    padding: 0.45rem 1rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.975rem;
+    font-weight: 500;
+    color: var(--ink);
+}
+
+/* ---------- Projects ---------- */
+#projects {
+    background: var(--paper);
+}
+
+.project {
+    margin-bottom: 4rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--line);
+}
+
+.project:last-child {
+    margin-bottom: 0;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    color: var(--petrol);
+}
+
+.project-preview {
+    margin: 1.25rem 0 1rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--mist);
+}
+
+.project-preview iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: 0;
+}
+
+.project small {
+    color: var(--slate);
+    font-size: 0.875rem;
+}
+
+/* ---------- Contact ---------- */
+#contact p {
+    margin-bottom: 0.6rem;
+}
+
+#contact a {
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 1.75rem var(--gutter);
+    background: var(--petrol-deep);
+    color: #a9c7cf;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+    max-width: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    body {
+        font-size: 1rem;
+    }
+
+    header {
+        position: static; /* saves screen space on phones */
+    }
+
+    section {
+        padding-block: 3rem;
+    }
+
+    .project {
+        padding-left: 1rem;
+    }
+
+    .project-preview iframe {
+        height: 420px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}

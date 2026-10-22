@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+	<link rel="icon" href="image/logo.png" type="image/png">
+	<link href="design.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<!--header-->
+<div class="header">
+	<div class="logo">
+		<a href="index.html"><img src="image/logo.png" title="Brewtopia " alt="Brewtopia Logo"/>&nbsp;Brewtopia Café<small class="slogan"> &nbsp;&nbsp; - "Sip Bold, Live Bright"</small></a>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about_us.html">About Us</a></li>
+			<li>
+				<a href="#"><i class="fa fa-caret-down"></i>Menu</a>
+				<ul>
+					<li><a href="product1.html">Coffee Creations</a></li>
+					<li><a href="product2.html">Tea & Wellness</a></li>
+					<li><a href="product3.html">Pastries & Desserts</a></li>
+					<li><a href="product4.html">Light Bites & Snacks</a></li>
+				</ul>
+			</li>
+			<li><a href="contact_us.html">Contact Us</a></li>
+			<li><a href="login.html"><i class="fas fa-user"></i></a></li>
+			<li>
+				<a href="#" id="cart-icon">
+					<i class="fa fa-shopping-cart"></i>
+					<span id="cart-count" class="cart-count">0</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- shopping cart part -->
+<div class="overlay" id="overlay"></div>
+
+<div id="cart-section" class="cart-section">
+    <button class="cart-close" id="cart-close">
+        <i class="fa fa-times"></i>
+    </button>
+    
+	<h2 class="cart-title">Your Cart</h2>
+    
+    <div id="cart-items" class="cart-items"><!-- Shopping cart items will be generated dynamically here --></div>
+    
+	<div class="cart-summary">
+		<div class="summary-row">
+			<label for="service-type">Service Type:</label>
+			<select id="service-type">
+				<option value="delivery" selected>Delivery</option>
+				<option value="dinein">Dine-In</option>
+			</select>
+		</div>
+		<div class="summary-row">
+			<span>Subtotal:</span>
+			<span id="subtotal">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Delivery Fee:</span>
+			<span id="delivery-fee">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Tax (6%):</span>
+			<span id="tax">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Package Fee:</span>
+			<span id="package-fee">RM 0.00</span>
+		</div>
+		<div class="summary-row summary-total">
+			<span>Total:</span>
+			<span id="total">RM 0.00</span>
+		</div>
+		
+		<button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+	</div>
+</div>
+    
+<!--About Us-->
+<div class="about">
+	<img src="image/aboutusbanner.jpg">
+	<div class="aboutfront">
+		<h2>About Us</h2>
+		<p>
+			At Brewtopia, we believe coffee is more than just a drink—it’s an experience, a moment of calm in a busy world, and a bridge that connects people. 
+			Founded with a passion for specialty brews and warm hospitality, Brewtopia was created to be a little escape where every cup feels like home.<br><br>
+			Our name comes from the idea of a “utopia” built around brewing—a place where flavor, comfort, and community come together. Each cup we serve is 
+			carefully crafted with premium beans, fresh ingredients, and a touch of creativity.<br><br> Whether you’re here for your morning espresso, an afternoon 
+			tea break, or a sweet treat with friends, we aim to make every visit a step closer to your perfect world—one brew at a time.
+			<br><br><b>Our Slogan - Sip Bold, Live Bright</b>
+			<br><br>Sip Bold — because life’s too short for ordinary coffee. We roast with passion to bring you rich, full-bodied flavors that awaken your senses.
+			<br>Live Bright — because great coffee fuels great moments. We believe in creating a warm, inspiring space where every sip brings energy, positivity, and joy to your day.
+			<br><br>Start bold. Live bright. That’s the Brewtopia way.
+		</p>
+		
+		<div class="vmbox">
+			<div class="aleft">
+				<h2><i class="fa-solid fa-binoculars"></i>Vision</h2>
+				<p>
+					To be the go-to café where every cup inspires comfort, creativity, and connection—creating a community built on the love of great brews.
+				</p>
+			</div>
+			
+			<div class="aright">
+				<h2><i class="fa-solid fa-flag"></i>Mission</h2>
+				<p>
+					To serve high-quality coffee, tea, and fresh treats, provide a cozy space for people to relax and connect, and promote sustainability through 
+					ethical sourcing and eco-friendly practices.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="team">
+		<h2>Meet Our Team</h2>	
+									
+		<div class="teambox">
+			<div class="top">
+				<img src="image/KonYi.png" title="Kon Yi"/>
+			</div>
+			<div class="bottom">
+				<h4>Kon Yi <br> - Café Manager -</h4>
+				<p>"She makes sure Brewtopia runs smoothly and every guest feels at home. With a warm smile and great hospitality, 
+				she’s always ready to welcome you in"<br><br>
+				<i class="fa fa-envelope"></i><a href="mailto:konyi@gmail.com" >konyi@gmail.com</a> <br>
+				<i class="fa fa-phone"></i> +6010-7613282</p>
+			</div>
+		</div>
+		
+		<div class="teambox">
+			<div class="top">
+				<img src="image/shiqi.png" title="Tay Shi Qi" width="80%", height="210px";/>
+			</div>
+			<div class="bottom">
+				<h4>Tay Shi Qi <br> - Head Barista -</h4>
+				<p>"Passionate about latte art, she ensures every cup is perfect. Always exploring new flavors, she loves surprising 
+				customers with something special"<br><br>
+				<i class="fa fa-envelope"></i><a href="mailto:shiqi@gmail.com" >shiqi@gmail.com</a><br>
+				<i class="fa fa-phone"></i>+60197508983</p>
+			</div>
+		</div>
+		
+		<div class="teambox">
+			<div class="top">
+				<img src="image/sarvesh.png" title="Sarrveshwarran Sundararasan" width="80%", height="210px";/>
+			</div>
+			<div class="bottom">
+				<h4>Sarrveshwarran Sundararasan <br> - Pastry Chef -</h4>
+				<p>"He brings sweetness to Brewtopia with his freshly baked croissants, cakes, and desserts. His creations are made daily to 
+				pair perfectly with your coffee"<br><br>
+				<i class="fa fa-envelope"></i><a href="mailto:sarrvesh@gmail.com" >sarrvesh@gmail.com</a><br>
+				<i class="fa fa-phone"></i>+601111503757</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="core">
+		<h2>Our Core Values</h2>
+		
+		<div class="corebox">
+			<i class="fa fa-star"></i>
+			<h3>Quality</h3>
+			<p>We are committed to serving only the best coffee, tea, and fresh treats, crafted with care and consistency.</p>
+		</div>
+		
+		<div class="corebox">
+			<i class="fa fa-users"></i>
+			<h3>Community</h3>
+			<p>We strive to create a welcoming space where people can connect, share, and feel at home.</p>
+		</div>
+		
+		<div class="corebox">
+			<i class="fas fa-hands-helping"></i>
+			<h3>Hospitality</h3>
+			<p>We support ethical sourcing, eco-friendly practices, and local suppliers to make a positive impact on the planet.</p>
+		</div>
+	</div>
+</div>
+
+<!--footer-->
+<div class="footer">
+	<div class="footbig">
+		<div class="footbox">
+			<img src="image/logo.png" title="Brewtopia " alt="Brewtopia Logo"/>
+			<h2>Brewtopia Café</h2>
+			<p>Sip Bold, Live Bright</p>
+			<ul class="icon">
+				<li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="https://x.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Quick Links</h3>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about_us.html">About</a></li>
+				<li><a href="product1.html">Product</a></li>
+                <li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Help & Support</h3>
+			<ul>
+				<li><a href="faqs.html">FAQs</a></li>
+				<li><a href="privacy_policy.html">Privacy Policy</a></li>
+				<li><a href="terms_condition.html">Terms & Conditions</a></li>
+				<li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="checkout.html">Check Out</a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Contact Us</h3>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1805585650786!2d101.76820647718331!3d3.046250289012621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35620cf0db79%3A0x845cf290cc322790!2sBatu%2011%20cheras!5e0!3m2!1sen!2smy!4v1755910421715!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<div class="footbox">
+			<p><i class="fa fa-map-marker"></i>130, Jalan 15, Batu 11 Cheras, 43200 Cheras, Selangor</p>
+			<p><i class="fa fa-envelope"></i><a href="mailto:hello@brewtopia.com">hello@brewtopia.com</a></p>
+			<p><i class="fa fa-phone"></i>+60 19-750 4913</p>
+		</div>
+		
+		<div class="footbox">
+			<h3>Newsletter</h3>
+			<p>Subscribe to get special offers and updates</p>
+			<form>
+				<input type="email" placeholder="Your email address">
+				<button type="submit">Subscribe</button>
+			</form>
+		</div>
+	</div>
+	
+	<p><small>&copy; 2025 Brewtopia Café. All rights reserved. </small></p>
+</div>
+
+<script src="cart.js"></script>
+
+</body>
+</html>
+

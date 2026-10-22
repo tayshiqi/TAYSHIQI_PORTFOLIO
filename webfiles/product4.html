@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Light Bites & Snacks</title>
+	<link rel="icon" href="image/logo.png" type="image/png">
+	<link href="design.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<!--header-->
+<div class="header">
+	<div class="logo">
+		<a href="index.html"><img src="image/logo.png" title="Brewtopia " alt="Brewtopia Logo"/>&nbsp;Brewtopia Café<small class="slogan"> &nbsp;&nbsp; - "Sip Bold, Live Bright"</small></a>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about_us.html">About Us</a></li>
+			<li>
+				<a href="#"><i class="fa fa-caret-down"></i>Menu</a>
+				<ul>
+					<li><a href="product1.html">Coffee Creations</a></li>
+					<li><a href="product2.html">Tea & Wellness</a></li>
+					<li><a href="product3.html">Pastries & Desserts</a></li>
+					<li><a href="product4.html">Light Bites & Snacks</a></li>
+				</ul>
+			</li>
+			<li><a href="contact_us.html">Contact Us</a></li>
+			<li><a href="login.html"><i class="fas fa-user"></i></a></li>
+			<li>
+				<a href="#" id="cart-icon">
+					<i class="fa fa-shopping-cart"></i>
+					<span id="cart-count" class="cart-count">0</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- shopping cart part -->
+<div class="overlay" id="overlay"></div>
+
+<div id="cart-section" class="cart-section">
+    <button class="cart-close" id="cart-close">
+        <i class="fa fa-times"></i>
+    </button>
+    
+	<h2 class="cart-title">Your Cart</h2>
+    
+    <div id="cart-items" class="cart-items"><!-- Shopping cart items will be generated dynamically here --></div>
+    
+	<div class="cart-summary">
+		<div class="summary-row">
+			<label for="service-type">Service Type:</label>
+			<select id="service-type">
+				<option value="delivery" selected>Delivery</option>
+				<option value="dinein">Dine-In</option>
+			</select>
+		</div>
+		<div class="summary-row">
+			<span>Subtotal:</span>
+			<span id="subtotal">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Delivery Fee:</span>
+			<span id="delivery-fee">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Tax (6%):</span>
+			<span id="tax">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Package Fee:</span>
+			<span id="package-fee">RM 0.00</span>
+		</div>
+		<div class="summary-row summary-total">
+			<span>Total:</span>
+			<span id="total">RM 0.00</span>
+		</div>
+		
+		<button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+	</div>
+</div>   
+    
+<!--Product 4: Light Bites & Snacks-->
+<h2 class="productheading">Light Bites & Snacks</h2>
+
+<div class="menu">
+	<div class="menubar">
+		<p>Menu</p>
+		<ul>
+			<li><a href="product1.html"><i class="fa-solid fa-coffee"></i>Coffee Creations</a></li>
+			<li><a href="product2.html"><i class="fa-solid fa-leaf"></i>Tea & Wellness</a></li>
+			<li><a href="product3.html"><i class="fa-solid fa-cake-candles"></i>Pastries & Desserts</a></li>
+			<span class="snackmenu"><i class="fa-solid fa-burger"></i>Light Bites & Snacks</span>
+		</ul>
+	</div>
+
+	<div class="menu-items">
+		<div class="item">
+			<img src="image/sandwiches.jpg">
+			<h4>Sandwiches</h4>
+			<div class="item-container">
+				<div class="item-left">
+					<p>Freshly made with deli meats, cheese, and veggies.</p><br>
+					<p class="price">Price: RM 12 per set</p>
+                    <select class="size-select">
+                        <option value="1 set" data-weight="0.3" data-extra="0">1 set (RM 12)</option>
+                        <option value="2 set" data-weight="0.5" data-extra="11">2 set (RM 23)</option>
+                   </select>                    
+				</div>
+				<div class="item-right">
+					<button class="cart-btn btn-style-5" data-name="Sandwiches" data-price="12" data-image="image/sandwiches.jpg">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="item">
+			<img src="image/wraps.avif" >
+			<h4>Wraps</h4>
+			<div class="item-container">
+				<div class="item-left">
+					<p>Healthy tortilla wraps filled with chicken, veggies, or tuna.</p><br>
+					<p class="price">Price: RM 13 per set</p>
+                    <select class="size-select">
+                        <option value="1 set" data-weight="0.3" data-extra="0">1 set (RM 13)</option>
+                        <option value="2 set" data-weight="0.5" data-extra="12">2 set (RM 25)</option>
+                   </select>                    
+				</div>
+				<div class="item-right">
+					<button class="cart-btn btn-style-5" data-name="Wraps" data-price="13" data-image="image/wraps.avif">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="item">
+			<img src="image/quiches.jpg">
+			<h4>Quiches</h4>
+			<div class="item-container">
+				<div class="item-left">
+					<p>Savory pastry with egg, cheese, and vegetables/meat.</p><br>
+					<p class="price">Price: RM 14 per slice</p>
+                    <select class="size-select">
+						<option value="1 slice" data-weight="0.3" data-extra="0">1 slice (RM 14)</option>
+                        <option value="2 slices" data-weight="0.5" data-extra="11">2 slices (RM 25)</option>
+                   </select>                    
+				</div>
+				<div class="item-right">
+					<button class="cart-btn btn-style-5" data-name="Quiches" data-price="14" data-image="image/quiches.jpg">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="item">
+			<img src="image/salads.jpg">
+			<h4>Salads</h4>
+			<div class="item-container">
+				<div class="item-left">
+					<p>Crisp greens with dressings, customizable toppings.</p><br>
+					<p class="price">Price: RM 12 per bowl</p>
+                    <select class="size-select">
+                        <option value="1 set" data-weight="0.3" data-extra="0">1 set (RM 12)</option>
+                        <option value="2 set" data-weight="0.5" data-extra="8">2 set (RM 20)</option>
+                   </select>                    
+				</div>
+				<div class="item-right">
+					<button class="cart-btn btn-style-5" data-name="Salads" data-price="12" data-image="image/salads.jpg">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--footer-->
+<div class="footer">
+	<div class="footbig">
+		<div class="footbox">
+			<img src="image/logo.png" title="Brewtopia " alt="Brewtopia Logo"/>
+			<h2>Brewtopia Café</h2>
+			<p>Sip Bold, Live Bright</p>
+			<ul class="icon">
+				<li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="https://x.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Quick Links</h3>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about_us.html">About</a></li>
+				<li><a href="product1.html">Product</a></li>
+                <li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Help & Support</h3>
+			<ul>
+				<li><a href="faqs.html">FAQs</a></li>
+				<li><a href="privacy_policy.html">Privacy Policy</a></li>
+				<li><a href="terms_condition.html">Terms & Conditions</a></li>
+				<li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="checkout.html">Check Out</a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Contact Us</h3>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1805585650786!2d101.76820647718331!3d3.046250289012621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35620cf0db79%3A0x845cf290cc322790!2sBatu%2011%20cheras!5e0!3m2!1sen!2smy!4v1755910421715!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<div class="footbox">
+			<p><i class="fa fa-map-marker"></i>130, Jalan 15, Batu 11 Cheras, 43200 Cheras, Selangor</p>
+			<p><i class="fa fa-envelope"></i><a href="mailto:hello@brewtopia.com">hello@brewtopia.com</a></p>
+			<p><i class="fa fa-phone"></i>+60 19-750 4913</p>
+		</div>
+		
+		<div class="footbox">
+			<h3>Newsletter</h3>
+			<p>Subscribe to get special offers and updates</p>
+			<form>
+				<input type="email" placeholder="Your email address">
+				<button type="submit">Subscribe</button>
+			</form>
+		</div>
+	</div>
+	
+	<p><small>&copy; 2025 Brewtopia Café. All rights reserved. </small></p>
+</div>
+
+<script src="cart.js"></script>
+
+</body>
+</html>

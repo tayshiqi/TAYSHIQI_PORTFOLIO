@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coffee Creations - Brewtopia Café</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <link href="design.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+	<div class="logo">
+		<a href="index.html"><img src="image/logo.png" title="Brewtopia " alt="Brewtopia Logo"/>&nbsp;Brewtopia Café<small class="slogan"> &nbsp;&nbsp; - "Sip Bold, Live Bright"</small></a>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about_us.html">About Us</a></li>
+			<li>
+				<a href="#"><i class="fa fa-caret-down"></i>Menu</a>
+				<ul>
+					<li><a href="product1.html">Coffee Creations</a></li>
+					<li><a href="product2.html">Tea & Wellness</a></li>
+					<li><a href="product3.html">Pastries & Desserts</a></li>
+					<li><a href="product4.html">Light Bites & Snacks</a></li>
+				</ul>
+			</li>
+			<li><a href="contact_us.html">Contact Us</a></li>
+			<li><a href="login.html"><i class="fas fa-user"></i></a></li>
+			<li>
+				<a href="#" id="cart-icon">
+					<i class="fa fa-shopping-cart"></i>
+					<span id="cart-count" class="cart-count">0</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- shopping cart part -->
+<div class="overlay" id="overlay"></div>
+
+<div id="cart-section" class="cart-section">
+    <button class="cart-close" id="cart-close">
+        <i class="fa fa-times"></i>
+    </button>
+    
+	<h2 class="cart-title">Your Cart</h2>
+    
+    <div id="cart-items" class="cart-items"><!-- Shopping cart items will be generated dynamically here --></div>
+    
+	<div class="cart-summary">
+		<div class="summary-row">
+			<label for="service-type">Service Type:</label>
+			<select id="service-type">
+				<option value="delivery" selected>Delivery</option>
+				<option value="dinein">Dine-In</option>
+			</select>
+		</div>
+		<div class="summary-row">
+			<span>Subtotal:</span>
+			<span id="subtotal">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Delivery Fee:</span>
+			<span id="delivery-fee">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Tax (6%):</span>
+			<span id="tax">RM 0.00</span>
+		</div>
+		<div class="summary-row">
+			<span>Package Fee:</span>
+			<span id="package-fee">RM 0.00</span>
+		</div>
+		<div class="summary-row summary-total">
+			<span>Total:</span>
+			<span id="total">RM 0.00</span>
+		</div>
+		
+		<button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+	</div>
+</div>
+  
+<!--banner-->
+<div class="banner">
+	<h1>Crafted Brews, Cozy Moments</h1>
+	<p>Discover specialty coffee, fresh bakes, and a space made for you.</p>
+	<p>
+		<a href="product1.html">Order Now</a>
+	</p>
+</div>
+
+<!--content-->
+<!--video-->
+<div class="video">
+	<h2>From Farm to Café</h2>
+	<p>At Brewtopia Café, we believe every sip and bite tells a story. That’s why we proudly share with you how our trusted partners 
+	craft the ingredients that make your favorites possible.</p>
+	<table>
+		<tr>
+			<td colspan="4"><iframe src="https://youtube.com/embed/6skcgBvorDk" width="730px" height="370px" id="mainvid"></iframe></td>
+		</tr>
+		<tr>
+			<td><iframe src="https://youtube.com/embed/6skcgBvorDk" width="180px" height="90px" onmouseover="changeVid(this)"></iframe></td>
+			<td><iframe src="https://youtube.com/embed/dTHansLrH0M" width="180px" height="90px" onmouseover="changeVid(this)"></iframe></td>
+			<td><iframe src="https://youtube.com/embed/zfHDkS31-0g" width="180px" height="90px" onmouseover="changeVid(this)"></iframe></td>
+			<td><iframe src="https://youtube.com/embed/MH-tBhbCPWA" width="180px" height="90px" onmouseover="changeVid(this)"></iframe></td>
+		</tr>
+	</table>
+</div>
+ 
+<!--why choose us-->
+<div class="choose">
+	<h2>Why Choose Us</h2>
+	
+	<div class="cbox">
+		<i class="fa-solid fa-mug-hot"></i>
+		<h3>Quality Brews</h3>
+		<p>Premium, ethically sourced beans brewed to perfection.</p>
+	</div>
+	
+	<div class="cbox">
+		<i class="fa-solid fa-couch"></i>
+		<h3>Cozy Atmosphere</h3>
+		<p>A welcoming space to relax, connect, or recharge.</p>
+	</div>
+	
+	<div class="cbox">
+		<i class="fa-solid fa-cookie-bite"></i>
+		<h3>Fresh Treats</h3>
+		<p>Delicious pastries and light bites made daily.</p>
+	</div>
+</div>
+
+<!--product category-->
+
+<div class="category">
+	<h2>Our Offerings</h2>
+	<p>Discover the flavors of Brewtopia. Whether you’re here for your daily coffee, a calming tea, a sweet pastry, or a light bite, we’ve crafted something 
+	special for everyone.</p>
+	
+	<div class="pbox">
+		<img src="image/coffeecreation.jpg">
+		<h3>Coffee Creations</h3>
+		<p>
+			Start your day with the rich aroma of freshly brewed coffee. From bold Espressos and smooth Americanos to creamy Lattes, foamy Cappuccinos, and 
+			indulgent Mochas, each cup is crafted to give you the perfect pick-me-up.
+		</p>
+		<a href="product1.html">Explore More</a>
+	</div>
+	
+	<div class="pbox">
+		<img src="image/teawellness.webp">
+		<h3>Tea & Wellness</h3>
+		<p>
+			For moments of calm and comfort, our teas are carefully selected to soothe and refresh. Whether it’s the earthy notes of Green Tea, the elegance of 
+			Earl Grey, or the spice of a Chai Latte, there’s a blend for every mood.
+		</p>
+		<a href="product2.html">Explore More</a>
+	</div>
+	
+	<div class="pbox">
+		<img src="image/pastry.webp">
+		<h3>Pastries & Desserts</h3>
+		<p>
+			Pair your drink with something sweet and freshly baked. From buttery Croissants and soft Muffins to creamy Cheesecake and decadent Brownies, 
+			our desserts are made to satisfy your cravings and make every visit special.
+		</p>
+		<a href="product3.html">Explore More</a>
+	</div>
+	
+	<div class="pbox">
+		<img src="image/snack.jpg">
+		<h3>Light Bites & Snacks</h3>
+		<p>
+			When you need something more filling, our light bites are the perfect choice. Enjoy fresh Sandwiches, hearty Wraps, savory Quiches, and crisp 
+			Salads—crafted to keep you energized without weighing you down.
+		</p>
+		<a href="product4.html">Explore More</a>
+	</div>
+</div>
+
+<!--Our Trusted Partners-->
+<div class="partner">
+	<h2>Our Trusted Partners</h2>
+	<p>At Brewtopia Café, we believe that every great cup and every delightful bite begins with the finest ingredients and reliable sources. 
+	That’s why we carefully select partners who share our passion for quality, sustainability, and authenticity.</p>
+	
+	<div class="partnerbox">
+		<img src="image/beancraft.png">
+		<h3>BeanCraft Roastery</h3>
+		<p>Supplying us with freshly roasted, ethically sourced beans for aromatic brews.</p>
+	</div>
+	
+	<div class="partnerbox">
+		<img src="image/zenleaf.png">
+		<h3>ZenLeaf Botanicals</h3>
+		<p>Crafting premium blends of green, black, and herbal teas for wellness and relaxation.</p>
+	</div>
+	
+	<div class="partnerbox">
+		<img src="image/morningrise.jpeg">
+		<h3>Morning Rise Bakery</h3>
+		<p>Providing freshly baked croissants, muffins, and desserts made with love and tradition.</p>
+	</div>
+	
+	<div class="partnerbox">
+		<img src="image/greenharvest.png">
+		<h3>Green Harvest Organics</h3>
+		<p>Supplying wholesome greens, fruits, and ingredients for our light bites and salads.</p>
+	</div>
+	
+	<div class="partnerbox">
+		<img src="image/ecoserve.png">
+		<h3>EcoServe Packaging</h3>
+		<p>Ensuring eco-friendly practices in packaging, and community support.</p>
+	</div>
+</div>
+
+<!--certification-->
+<div class="certification">
+	<h2>Our Certifications</h2>
+	<p>At Brewtopia Café, we take pride in serving not just delicious flavors, but also peace of mind. Every cup and every bite you enjoy is backed by 
+	our commitment to quality, safety, and sustainability.</p>
+	
+	<div class="certbox">
+		<figure>
+			<img src="image/haccp.png" title="Hazard Analysis and Critical Control Points" alt="Hazard Analysis and Critical Control Points"/>
+			<figcaption><i>HACCP Certified</i></figcaption>
+		</figure>
+	</div>
+	
+	<div class="certbox">
+		<figure>
+			<img src="image/fairtrade.png" title="Fairtrade Certified Coffee & Tea" alt="Fairtrade Certified Coffee & Tea"/>
+			<figcaption><i>Fairtrade Certified Coffee & Tea</i></figcaption>
+		</figure>
+	</div>
+	
+	<div class="certbox">
+		<figure>
+			<img src="image/sca.png" title="Specialty Coffee Association (SCA) Membership" alt="Specialty Coffee Association (SCA) Membership"/>
+			<figcaption><i>Specialty Coffee Association (SCA) Membership</i></figcaption>
+		</figure>
+	</div>
+	
+	<div class="certbox">
+		<figure>
+			<img src="image/ecofriendly.png" title="Eco-Friendly Packaging Certification" alt="Eco-Friendly Packaging Certification"/>
+			<figcaption><i>Eco-Friendly Packaging Certification</i></figcaption>
+		</figure>
+	</div>
+</div>
+
+<!--footer-->
+<div class="footer">
+	<div class="footbig">
+		<div class="footbox">
+			<img src="image/logo.png" title="Brewtopia " alt="Brewtopia Logo"/>
+			<h2>Brewtopia Café</h2>
+			<p>Sip Bold, Live Bright</p>
+			<ul class="icon">
+				<li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="https://x.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Quick Links</h3>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about_us.html">About</a></li>
+				<li><a href="product1.html">Product</a></li>
+                <li><a href="login.html">Login</a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Help & Support</h3>
+			<ul>
+				<li><a href="faqs.html">FAQs</a></li>
+				<li><a href="privacy_policy.html">Privacy Policy</a></li>
+				<li><a href="terms_condition.html">Terms & Conditions</a></li>
+				<li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="checkout.html">Check Out</a></li>
+			</ul>
+		</div>
+		
+		<div class="footbox">
+			<h3>Contact Us</h3>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1805585650786!2d101.76820647718331!3d3.046250289012621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35620cf0db79%3A0x845cf290cc322790!2sBatu%2011%20cheras!5e0!3m2!1sen!2smy!4v1755910421715!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<div class="footbox">
+			<p><i class="fa fa-map-marker"></i>130, Jalan 15, Batu 11 Cheras, 43200 Cheras, Selangor</p>
+			<p><i class="fa fa-envelope"></i><a href="mailto:hello@brewtopia.com">hello@brewtopia.com</a></p>
+			<p><i class="fa fa-phone"></i>+60 19-750 4913</p>
+		</div>
+		
+		<div class="footbox">
+			<h3>Newsletter</h3>
+			<p>Subscribe to get special offers and updates</p>
+			<form>
+				<input type="email" placeholder="Your email address">
+				<button type="submit">Subscribe</button>
+			</form>
+		</div>
+	</div>
+	
+	<p><small>&copy; 2025 Brewtopia Café. All rights reserved. </small></p>
+</div>
+
+<script src="cart.js"></script>
+
+</body>
+</html>
