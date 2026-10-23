@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2026 at 01:00 PM
+-- Generation Time: Oct 23, 2026 at 09:33 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,8 +42,7 @@ CREATE TABLE `admintbl` (
 --
 
 INSERT INTO `admintbl` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `admin_contact`, `admin_gender`, `admin_image`) VALUES
-(1, 'Tay Shi Qi', 'shiqi@gmail.com', 'e5716d45c49c7538984045b0e526e31a', '0197508983', 'Female', 'shiqi.jpg'),
-(2, 'Sinvvy Foo Hui Qing', 'sinvvy@gmail.com', 'acca926c454681635bd0eeeed4004def', '0102061189', 'Female', 'sinvvy.jpg');
+(1, 'Tay Shi Qi', 'shiqi@gmail.com', 'e5716d45c49c7538984045b0e526e31a', '0197508983', 'Female', 'shiqi.jpg');
 
 -- --------------------------------------------------------
 
