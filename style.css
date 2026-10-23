@@ -283,12 +283,6 @@ main > section.hero > h2::after { display: none; }
 /* ---------- Certifications & Achievements (centered) ---------- */
 #certifications > h2,
 #certifications > .section-description {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#certifications > h2::after {
     margin-left: auto;
     margin-right: auto;
 }
