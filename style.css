@@ -355,6 +355,12 @@ main > section.hero > h2::after { display: none; }
     color: #ffffff;
 }
 
+.icadet-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
 /* ---------- Contact ---------- */
 #contact p { margin-bottom: 0.6rem; }
 
